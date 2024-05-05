@@ -5,7 +5,6 @@ on:
 
 jobs:
   main:
-    name: "REUSABLE WORKFLOW JOB NAME 1"
     runs-on: ubuntu-latest
     
     steps:
