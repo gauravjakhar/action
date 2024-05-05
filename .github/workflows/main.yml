@@ -23,6 +23,7 @@ jobs:
           echo "First Job print hello world ----------"
 
   secondjob:
+    permissions: write-all
     needs: firstjob
     name: "--------- Second Job Name ---------"
     runs-on: ubuntu-latest
