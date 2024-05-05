@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+      - run: ls -R .
       - name: FIRST MAIN JOB NAME
         run: |
           echo "First Job print hello world ----------"
@@ -22,6 +23,8 @@ jobs:
     name: "--------- Second Job Name ---------"
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
       - run: ls -R .
       - name: Call Reuse1
         uses: ./.github/workflows/reuse1.yml
