@@ -20,9 +20,9 @@ jobs:
   secondjob:
     needs: firstjob
     name: "--------- Second Job Name ---------"
-    uses: ./.github/workflows/reuse1.yml
-
-  thirdjob:
-    needs: secondjob
-    name: "--------- Third Job Name ---------"
-    uses: ./.github/workflows/reuse2.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Reuse1
+        uses: ./.github/workflows/reuse1.yml
+      - name: Call Reuse2
+        uses: ./.github/workflows/reuse1.yml
