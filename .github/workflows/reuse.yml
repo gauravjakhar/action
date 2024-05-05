@@ -1,0 +1,14 @@
+name: REUSABLE WORKFLOW NAME
+
+on:
+  workflow_call:
+
+jobs:
+  main:
+    name: "REUSABLE WORKFLOW JOB NAME"
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Hello world name from reusable workflow
+      run: |
+        echo "Reusable Job print hello world ----------"
