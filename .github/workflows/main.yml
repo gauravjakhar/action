@@ -13,18 +13,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - run: |
-          pwd
-          cd $GITHUB_WORKSPACE/.github/workflows
-          pwd
-          ls -ltr .
       - name: FIRST MAIN JOB NAME
         run: |
           echo "First Job print hello world ----------"
       - name: Call Reuse1
-        uses: ./.github/workflows/reuse1.yml
-      - name: Call Reuse2
-        uses: ./.github/workflows/reuse2.yml
+        uses: ./.github/workflows/actions/reuse1.yml
 
   secondjob:
     permissions: write-all
@@ -34,5 +27,5 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - run: ls -ltr .
-      
+      - name: Call Reuse2
+        uses: ./.github/workflows/actions/reuse2.yml
