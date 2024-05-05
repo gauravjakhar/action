@@ -22,6 +22,8 @@ jobs:
     name: "--------- Second Job Name ---------"
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
       - name: Call Reuse1
         uses: ./.github/workflows/reuse1.yml
       - name: Call Reuse2
