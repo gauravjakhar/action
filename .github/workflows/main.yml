@@ -21,6 +21,10 @@ jobs:
       - name: FIRST MAIN JOB NAME
         run: |
           echo "First Job print hello world ----------"
+      - name: Call Reuse1
+        uses: ./.github/workflows/reuse1.yml
+      - name: Call Reuse2
+        uses: ./.github/workflows/reuse2.yml
 
   secondjob:
     permissions: write-all
@@ -30,8 +34,5 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - run: ls -R .
-      - name: Call Reuse1
-        uses: ./.github/workflows/reuse1.yml
-      - name: Call Reuse2
-        uses: ./.github/workflows/reuse1.yml
+      - run: ls -ltr .
+      
