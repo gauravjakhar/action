@@ -13,7 +13,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - run: ls -R .
+      - run: |
+          pwd
+          cd $GITHUB_WORKSPACE
+          pwd
+          ls -ltr .
       - name: FIRST MAIN JOB NAME
         run: |
           echo "First Job print hello world ----------"
