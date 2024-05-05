@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - run: ls -R .
     - name: Checkout Code
       uses: actions/checkout@v4
     - name: Hello world name from reusable workflow
