@@ -1,0 +1,19 @@
+name: "--------- MAIN WORKFLOW ---------"
+
+on: 
+  push: 
+    branches:
+    - main
+
+jobs:
+  firstjob:
+    name: "--------- First Job Name ---------"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: FIRST MAIN JOB NAME
+        run: |
+          echo "First Job print hello world ----------"
+
+      - name: SECOND MAIN JOB NAME CALLING REUSABLE JOB
+        uses: ./.github/workflows/reuse.yml
