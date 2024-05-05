@@ -21,3 +21,8 @@ jobs:
     needs: firstjob
     name: "--------- Second Job Name ---------"
     uses: ./.github/workflows/reuse1.yml
+
+  thirdjob:
+    needs: firstjob
+    name: "--------- Third Job Name ---------"
+    uses: ./.github/workflows/reuse2.yml
