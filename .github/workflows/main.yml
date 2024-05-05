@@ -17,5 +17,8 @@ jobs:
         run: |
           echo "First Job print hello world ----------"
 
-      - name: SECOND MAIN JOB NAME CALLING REUSABLE JOB
-        uses: ./.github/workflows/reuse.yml
+  secondjob:
+    needs: firstjob
+    name: "--------- Second Job Name ---------"
+    uses: ./.github/workflows/reuse.yml
+        
