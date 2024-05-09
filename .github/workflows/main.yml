@@ -15,16 +15,20 @@ jobs:
       - name: FIRST MAIN JOB NAME
         run: |
           echo "First Job print hello world ----------"
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.10.0
+        with:
+          target: 'https://www.zaproxy.org/'
 
-  midjob:
-    needs: firstjob
-    uses: ./.github/workflows/reuse1.yml
+  # midjob:
+  #   needs: firstjob
+  #   uses: ./.github/workflows/reuse1.yml
 
-  secondjob:
-    permissions: write-all
-    needs: midjob
-    name: "--------- Second Job Name ---------"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+  # secondjob:
+  #   permissions: write-all
+  #   needs: midjob
+  #   name: "--------- Second Job Name ---------"
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v4
